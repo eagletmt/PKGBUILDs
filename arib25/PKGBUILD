@@ -1,0 +1,29 @@
+# Maintainer: eagletmt <eagletmt@gmail.com>
+pkgname=arib25
+pkgver=0.2.3
+pkgrel=1
+pkgdesc='ARIB STD-B25'
+arch=('i686' 'x86_64')
+url='http://hg.honeyplanet.jp/pt1/'
+license=('custom')
+depends=('pcsclite')
+makedepends=('pkg-config')
+options=(!strip)
+_rev=c44e16dbb0e2
+source=(http://hg.honeyplanet.jp/pt1/archive/$_rev.tar.bz2
+        make.patch)
+
+build() {
+  cd "$srcdir/pt1-$_rev/arib25"
+  patch -p0 < "$srcdir/make.patch"
+  make
+}
+
+package() {
+  cd "$srcdir/pt1-$_rev/arib25"
+  make PREFIX="$pkgdir/usr" install
+  install -Dm 644 readme.txt "$pkgdir/usr/share/licenses/arib25/readme.txt"
+}
+
+md5sums=('efc0cf93be458800c11ac012a606c2e4'
+         '708622ad92c18610c978f3863444a8c1')

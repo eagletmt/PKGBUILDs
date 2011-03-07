@@ -1,0 +1,21 @@
+--- driver/Makefile.orig	2011-03-06 15:41:05.440001592 +0900
++++ driver/Makefile	2011-03-06 15:41:15.876666609 +0900
+@@ -3,6 +3,7 @@
+ REL_VERSION = "1.1.0"
+ REL_DATE = "2010-01-27"
+ EXTRA_CFLAGS += -Wformat=2
++DESTDIR =
+ 
+ all: ${TARGET}
+ 
+@@ -27,8 +28,5 @@
+ 	fi
+ 
+ install: $(TARGET)
+-	install -m 644 $(TARGET) /lib/modules/`uname -r`/kernel/drivers/video
+-	if [ -d /etc/udev/rules.d -a ! -f /etc/udev/rules.d/99-pt1.rules ] ; then \
+-		install -m 644 etc/99-pt1.rules /etc/udev/rules.d ; \
+-	fi
+-	depmod -a
++	install -D -m 644 $(TARGET) $(DESTDIR)/lib/modules/`uname -r`/kernel/drivers/video
++	install -D -m 644 etc/99-pt1.rules $(DESTDIR)/etc/udev/rules.d

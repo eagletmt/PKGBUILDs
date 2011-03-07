@@ -1,0 +1,7 @@
+post_upgrade() {
+  depmod `uname -r`
+}
+
+post_install() {
+  post_install
+}
