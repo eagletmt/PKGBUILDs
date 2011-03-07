@@ -6,6 +6,11 @@ required by pt1
 
 - homepage: http://hg.honeyplanet.jp/pt1/
 
+## ccid13
+ccid 1.4 doesn't recognize B-CAS card...
+
+- homepage: http://pcsclite.alioth.debian.org/ccid.html
+
 ## dbskk-cdb
 SKK dictionary server based on cdb
 
