@@ -40,6 +40,12 @@ pt1 driver and enhanced recording tool
 
 - homepage: http://hg.honeyplanet.jp/pt1/
 
+## ruby-daemons
+A toolkit to create and control daemons in different ways
+
+- homepage: http://daemons.rubyforge.org/
+- AUR: http://aur.archlinux.org/packages.php?ID=34688
+
 ## ruby-oauth
 OAuth Core Ruby implementation
 
