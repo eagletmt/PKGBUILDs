@@ -40,6 +40,12 @@ pt1 driver and enhanced recording tool
 
 - homepage: http://hg.honeyplanet.jp/pt1/
 
+## ruby-thin
+A thin and fast web server
+
+- homepage: http://code.macournoyer.com/thin/
+- AUR: http://aur.archlinux.org/packages.php?ID=34709
+
 ## xbyak
 x86, x64 JIT assembler
 
