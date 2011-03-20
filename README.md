@@ -46,6 +46,12 @@ A toolkit to create and control daemons in different ways
 - homepage: http://daemons.rubyforge.org/
 - AUR: http://aur.archlinux.org/packages.php?ID=34688
 
+## ruby-nokogiri
+Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser
+
+- homepage: http://nokogiri.org/
+- AUR: http://aur.archlinux.org/packages.php?ID=35518
+
 ## ruby-oauth
 OAuth Core Ruby implementation
 

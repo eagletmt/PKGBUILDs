@@ -1,0 +1,23 @@
+# Maintainer: eagletmt <eagletmt@gmail.com>
+pkgname=ruby-nokogiri
+_realname=nokogiri
+pkgver=1.4.4
+pkgrel=1
+pkgdesc='Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser'
+arch=("i686" "x86_64")
+url='http://nokogiri.org/'
+license=('MIT')
+depends=("ruby" "libxslt")
+makedepends=('rubygems')
+source=(http://rubygems.org/downloads/$_realname-$pkgver.gem)
+noextract=($_realname-$pkgver.gem)
+
+build() {
+  cd "$srcdir"
+  local _gemdir="$(ruby -rubygems -e 'puts Gem.default_dir')"
+  gem install --ignore-dependencies -i "$pkgdir$_gemdir" $_realname-$pkgver.gem
+}
+
+# vim:set ts=2 sw=2 et:
+
+md5sums=('56accad92ccf677c2fa460f1ee80a4e2')
