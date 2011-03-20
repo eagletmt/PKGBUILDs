@@ -40,11 +40,29 @@ pt1 driver and enhanced recording tool
 
 - homepage: http://hg.honeyplanet.jp/pt1/
 
+## ruby-addressable
+URI Implementation
+
+- homepage: http://addressable.rubyforge.org/
+- AUR: http://aur.archlinux.org/packages.php?ID=47580
+
 ## ruby-daemons
 A toolkit to create and control daemons in different ways
 
 - homepage: http://daemons.rubyforge.org/
 - AUR: http://aur.archlinux.org/packages.php?ID=34688
+
+## ruby-em-http-request
+EventMachine based, async HTTP Request client
+
+- homepage: http://github.com/igrigorik/em-http-request
+- AUR: http://aur.archlinux.org/packages.php?ID=47581
+
+## ruby-escape\_utils
+Faster string escaping routines for your web apps
+
+- homepage: http://github.com/brianmario/escape\_utils
+- AUR: http://aur.archlinux.org/packages.php?ID=47579
 
 ## ruby-nokogiri
 Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser
