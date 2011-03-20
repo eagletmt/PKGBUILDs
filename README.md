@@ -40,6 +40,12 @@ pt1 driver and enhanced recording tool
 
 - homepage: http://hg.honeyplanet.jp/pt1/
 
+## ruby-oauth
+OAuth Core Ruby implementation
+
+- homepage: http://rubygems.org/gems/oauth
+- AUR: http://aur.archlinux.org/packages.php?ID=34703
+
 ## ruby-thin
 A thin and fast web server
 
