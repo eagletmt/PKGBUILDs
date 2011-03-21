@@ -3,7 +3,7 @@
 # Contributor: Gatekeeper <cool_work@yahoo.com>
 
 pkgname=mlterm
-pkgver=3.0.1
+pkgver=3.0.3
 pkgrel=1
 pkgdesc="Multi Lingual TERMinal emulator on X"
 url="http://mlterm.sourceforge.net/"
@@ -12,9 +12,9 @@ license=('BSD')
 depends=('fribidi' 'gtk2' 'libsm')
 makedepends=('intltool' 'librsvg' 'ncurses')
 options=('!libtool')
-source=(http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz 
+source=(http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz
         ${pkgname}.desktop)
-md5sums=('5a658c6f37bebb954899e755628ed4fb'
+md5sums=('1c0b0cb2a664f25b63dd748f2fc85795'
          'cea39a3e312d0a40a1e839d79bec03ed')
 
 build() {
@@ -29,7 +29,7 @@ build() {
   make || return 1
   make DESTDIR=${pkgdir} install
   echo 'conf_menu_path_2 = mlterm-zoom' >> ${pkgdir}/etc/mlterm/main
-  
+
   # install some freedesktop.org compatibility
   install -D -m644 ${srcdir}/${pkgname}.desktop \
     ${pkgdir}/usr/share/applications/${pkgname}.desktop
@@ -40,12 +40,11 @@ build() {
     ${pkgdir}/usr/share/pixmaps/${pkgname}.svg
   install -D -m644 contrib/icon/${pkgname}-icon-trans.svg \
     ${pkgdir}/usr/share/pixmaps/mlclient.svg
-  
+
   # finally we render a png as fallback for not svg aware menu applications
   # Attention: always make sure you check the dimensions of the source-svg,
   # you can read the dimensions via inkscapes export funktion
   cd ${pkgdir}/usr/share/pixmaps
-  rsvg -w 48 -h 38 -f png mlterm.svg mlterm.png
-  rsvg -w 48 -h 38 -f png mlclient.svg mlclient.png
+  rsvg-convert -w 48 -h 38 -f png -o mlterm.png mlterm.svg
+  rsvg-convert -w 48 -h 38 -f png -o mlclient.png mlclient.svg
 }
-
