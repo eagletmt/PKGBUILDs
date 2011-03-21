@@ -35,6 +35,11 @@ Japanese input method SKK engine for IBus
 - homepage: https://github.com/ueno/ibus-skk
 - AUR: http://aur.archlinux.org/packages.php?ID=44566
 
+## mlterm
+without scim
+
+- original: http://aur.archlinux.org/packages.php?ID=34420
+
 ## pt1-hg
 pt1 driver and enhanced recording tool
 
