@@ -51,6 +51,18 @@ URI Implementation
 - homepage: http://addressable.rubyforge.org/
 - AUR: http://aur.archlinux.org/packages.php?ID=47580
 
+## ruby-bson
+Ruby implementation of BSON
+
+- homepage: http://www.mongodb.org
+- AUR: https://aur.archlinux.org/packages.php?ID=47926
+
+## ruby-bson\_ext
+C extensions for Ruby BSON.
+
+- homepage: http://www.mongodb.org
+- AUR: https://aur.archlinux.org/packages.php?ID=47927
+
 ## ruby-daemons
 A toolkit to create and control daemons in different ways
 
@@ -68,6 +80,12 @@ Faster string escaping routines for your web apps
 
 - homepage: http://github.com/brianmario/escape\_utils
 - AUR: http://aur.archlinux.org/packages.php?ID=47579
+
+## ruby-mongo
+Ruby driver for the MongoDB
+
+- homepage: http://www.mongodb.org
+- AUR: https://aur.archlinux.org/packages.php?ID=47928
 
 ## ruby-nokogiri
 Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser
