@@ -1,0 +1,38 @@
+# Maintainer: eagletmt <eagletmt@gmail.com>
+pkgname=epgdump
+pkgver=2.0
+pkgrel=1
+pkgdesc='Dump EPG from MPEG-TS'
+arch=('i686' 'x86_64')
+url='http://2sen.dip.jp/cgi-bin/dtvup/upload.cgi'
+license=('custom')
+depends=('glibc')
+source=('http://2sen.dip.jp/cgi-bin/dtvup/source/up0027.zip'
+        'http://2sen.dip.jp/cgi-bin/dtvup/source/up0036.gz'
+        'http://2sen.dip.jp/cgi-bin/dtvup/source/up0200.gz'
+        'http://2sen.dip.jp/cgi-bin/dtvup/source/up0246.zip'
+        'http://2sen.dip.jp/cgi-bin/dtvup/source/up0248.zip')
+
+build() {
+  cd "$srcdir/${pkgname}r2"
+  patch -Np1 -i "$srcdir/up0036" || return 1
+  patch -Np1 -i "$srcdir/up0200" || return 1
+  patch -Np1 -i "$srcdir/fix_overflow_184.patch" || return 1
+  patch -Np1 -i "$srcdir/fix_overflow_maxseclen.patch" || return 1
+  make
+}
+
+package() {
+  mkdir -p "$pkgdir/usr/bin"
+  mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm755 "$srcdir/${pkgname}r2/epgdump" "$pkgdir/usr/bin/"
+  install -Dm644 "$srcdir/${pkgname}r2/readme.txt" "$pkgdir/usr/share/licenses/$pkgname/"
+}
+
+# vim:set ts=2 sw=2 et:
+
+md5sums=('ad838535205329e4a929568d46615ac1'
+         '14f640e518b7db6f7b1b7ed677a468d1'
+         'c7406807443bcb771ba87d67e8ea931d'
+         '56ce241780d62a5f8b88ea8b480acf30'
+         'ec2d1fa3a7fc843a171faeb473ddb1d0')
