@@ -105,6 +105,12 @@ A thin and fast web server
 - homepage: http://code.macournoyer.com/thin/
 - AUR: https://aur.archlinux.org/packages.php?ID=34709
 
+## tmux-cjkwidth
+A terminal multiplexer, cjkwidth patched
+
+- original: https://www.archlinux.org/packages/community/x86_64/tmux/
+- patch: http://d.hatena.ne.jp/khiker/20100122/tmux
+
 ## xbyak
 x86, x64 JIT assembler
 
