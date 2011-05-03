@@ -78,7 +78,7 @@ EventMachine based, async HTTP Request client
 ## ruby-escape\_utils
 Faster string escaping routines for your web apps
 
-- homepage: http://github.com/brianmario/escape\_utils
+- homepage: http://github.com/brianmario/escape_utils
 - AUR: https://aur.archlinux.org/packages.php?ID=47579
 
 ## ruby-mongo
@@ -110,6 +110,12 @@ A terminal multiplexer, cjkwidth patched
 
 - original: https://www.archlinux.org/packages/community/x86_64/tmux/
 - patch: http://d.hatena.ne.jp/khiker/20100122/tmux
+
+## ttf-ricty
+Japanese TrueType font for developers by mixing Inconsolata and Migu 1M.
+
+- homepage: http://save.sys.t.u-tokyo.ac.jp/~yusa/fonts/ricty.html
+- AUR: http://aur.archlinux.org/packages.php?ID=48689
 
 ## xbyak
 x86, x64 JIT assembler
