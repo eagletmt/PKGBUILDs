@@ -105,6 +105,12 @@ A thin and fast web server
 - homepage: http://code.macournoyer.com/thin/
 - AUR: https://aur.archlinux.org/packages.php?ID=34709
 
+## teyjus
+An efficient implementation of the higher-order logic programming language Lambda Prolog
+
+- homepage: ='http://code.google.com/p/teyjus/'
+- AUR: https://aur.archlinux.org/packages.php?ID=49313
+
 ## tmux-cjkwidth
 A terminal multiplexer, cjkwidth patched
 
