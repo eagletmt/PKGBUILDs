@@ -3,7 +3,7 @@
 # Contributor: Gatekeeper <cool_work@yahoo.com>
 
 pkgname=mlterm
-pkgver=3.0.3
+pkgver=3.0.5
 pkgrel=1
 pkgdesc="Multi Lingual TERMinal emulator on X"
 url="http://mlterm.sourceforge.net/"
@@ -14,8 +14,6 @@ makedepends=('intltool' 'librsvg' 'ncurses')
 options=('!libtool')
 source=(http://downloads.sourceforge.net/${pkgname}/${pkgname}-${pkgver}.tar.gz
         ${pkgname}.desktop)
-md5sums=('1c0b0cb2a664f25b63dd748f2fc85795'
-         'cea39a3e312d0a40a1e839d79bec03ed')
 
 build() {
   cd ${srcdir}/${pkgname}-${pkgver}
@@ -48,3 +46,6 @@ build() {
   rsvg-convert -w 48 -h 38 -f png -o mlterm.png mlterm.svg
   rsvg-convert -w 48 -h 38 -f png -o mlclient.png mlclient.svg
 }
+
+md5sums=('49859c6bcfd54152a95629405cc57699'
+         'cea39a3e312d0a40a1e839d79bec03ed')
