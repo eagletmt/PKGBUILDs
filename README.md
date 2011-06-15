@@ -128,3 +128,9 @@ x86, x64 JIT assembler
 
 - homepage: http://homepage1.nifty.com/herumi/soft/xbyak\_e.html
 - AUR: https://aur.archlinux.org/packages.php?ID=44027
+
+## yaskkserv
+Yet another SKK Japanese input method dictionary server
+
+- homepage: http://umiushi.org/~wac/yaskkserv/
+- AUR: https://aur.archlinux.org/packages.php?ID=49848
