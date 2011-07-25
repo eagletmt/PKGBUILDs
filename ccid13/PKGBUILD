@@ -14,6 +14,7 @@ makedepends=('pkgconfig')
 backup=(etc/reader.conf)
 source=(https://alioth.debian.org/frs/download.php/3300/${_pkgname}-${pkgver}.tar.bz2)
 provides=('ccid=1.3.13')
+conflicts=('ccid')
 md5sums=('275360cb253299b763e1122adf847265')
 
 build() {
