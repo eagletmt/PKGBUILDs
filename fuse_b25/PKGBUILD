@@ -1,0 +1,27 @@
+# Maintainer: eagletmt <eagletmt@gmail.com>
+pkgname=fuse_b25
+pkgver=0.4.8
+pkgrel=1
+pkgdesc='FUSE filesystem to descramble streams from ISDB-T/S DVB devices'
+arch=('i686' 'x86_64')
+url='http://2sen.dip.jp/cgi-bin/dtvup/upload.cgi'
+license=('GPL')
+depends=('fuse' 'pcsclite' 'ccid13')
+source=(http://2sen.dip.jp/cgi-bin/dtvup/source/up0664.zip)
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  unzip -o $pkgname-$pkgver.zip
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
+}
+
+# vim:set ts=2 sw=2 et:
+
+md5sums=('7542cbee2303853e729abf45940185b8')
