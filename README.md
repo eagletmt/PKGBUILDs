@@ -1,11 +1,6 @@
 # PKGBUILDs
 my PKGBUILDs for Arch Linux
 
-## arib25
-required by pt1
-
-- homepage: http://hg.honeyplanet.jp/pt1/
-
 ## ccid13
 ccid 1.4 doesn't recognize B-CAS card...
 
@@ -29,21 +24,26 @@ an IRC client for Emacs
 - homepage: http://www.nongnu.org/riece/index.html
 - AUR: https://aur.archlinux.org/packages.php?ID=41626
 
+## fuse\_b25
+FUSE filesystem to descramble streams from ISDB-T/S DVB devices
+
+- homepage: http://2sen.dip.jp/cgi-bin/dtvup/upload.cgi
+
 ## ibus-skk
 Japanese input method SKK engine for IBus
 
 - homepage: https://github.com/ueno/ibus-skk
 - AUR: https://aur.archlinux.org/packages.php?ID=44566
 
+## jtssplitter-svn
+MPEG2-TS file splitter
+
+- homepage: http://www.rec10.org/
+
 ## mlterm
 without scim
 
 - original: https://aur.archlinux.org/packages.php?ID=34420
-
-## pt1-hg
-pt1 driver and enhanced recording tool
-
-- homepage: http://hg.honeyplanet.jp/pt1/
 
 ## ruby-addressable
 URI Implementation
