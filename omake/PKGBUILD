@@ -3,12 +3,12 @@
 
 pkgname=omake
 pkgver=0.9.8.6_0.rc1
-pkgrel=1
+pkgrel=2
 pkgdesc="A build system designed for scalability and portability"
 arch=('i686' 'x86_64')
 url="http://omake.metaprl.org/index.html"
 license=('GPL')
-depends=('fam')
+depends=('readline' 'gamin')
 makedepends=('make' 'ocaml' 'patch')
 source=(http://omake.metaprl.org/downloads/$pkgname-${pkgver/_/-}.tar.gz \
         disable-ocaml3.12-warnings.patch)
