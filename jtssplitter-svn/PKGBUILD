@@ -2,13 +2,13 @@
 pkgname=jtssplitter-svn
 _realname=jtssplitter
 pkgver=865
-pkgrel=1
+pkgrel=2
 pkgdesc="MPEG2-TS file splitter"
 arch=('any')
 url="http://www.rec10.org/"
 license=('LGPL')
-depends=('java-environment')
-makedepends=('subversion')
+depends=('java-runtime')
+makedepends=('subversion' 'java-environment')
 provides=($_realname)
 source=($_realname
         fix-compiler-warnings.patch)
