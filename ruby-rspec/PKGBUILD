@@ -1,3 +1,5 @@
+# Contributor: Adam Russell <adamlr6+arch@gmail.com>
+# Maintainer: eagletmt <eagletmt@gmail.com>
 pkgname=ruby-rspec
 _realname=rspec
 pkgver=2.8.0
