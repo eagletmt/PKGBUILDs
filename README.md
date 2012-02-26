@@ -8,6 +8,11 @@ ccid 1.4 doesn't recognize B-CAS card...
 
 - homepage: http://pcsclite.alioth.debian.org/ccid.html
 
+## coq-nogui
+Formal proof management system, without CoqIDE
+
+- homepage: http://coq.inria.fr/
+
 ## dbskk-cdb
 SKK dictionary server based on cdb
 

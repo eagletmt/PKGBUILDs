@@ -1,0 +1,40 @@
+# Maintainer: Thomas Dziedzic < gostrc at gmail >
+# Contributor: George Giorgidze <giorgidze@gmail.com>
+
+pkgname=coq-nogui
+pkgver=8.3pl3
+pkgrel=2
+pkgdesc='Formal proof management system, without CoqIDE'
+arch=('i686' 'x86_64')
+url='http://coq.inria.fr/'
+license=('GPL')
+options=('!emptydirs')
+depends=('ocaml')
+makedepends=('camlp5-transitional' 'hevea')
+source=("http://coq.inria.fr/distrib/V$pkgver/files/coq-$pkgver.tar.gz")
+md5sums=('37e9a52110a025128667c03fed75f9c2')
+provides=("coq=$pkgver")
+conflicts=('coq')
+
+build() {
+  cd coq-$pkgver
+
+  ./configure \
+    -prefix '/usr' \
+    -mandir '/usr/share/man' \
+    -opt \
+    -coqide no \
+    -with-doc no
+
+  make -j1 world
+
+  make doc-html
+}
+
+package() {
+  cd coq-$pkgver
+
+  make COQINSTALLPREFIX="$pkgdir" install
+
+  make COQINSTALLPREFIX="$pkgdir" install-doc-html
+}
