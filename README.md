@@ -1,5 +1,7 @@
 # PKGBUILDs
-my PKGBUILDs for Arch Linux
+My PKGBUILDs for Arch Linux.
+
+Some package is not available on AUR.
 
 ## ccid13
 ccid 1.4 doesn't recognize B-CAS card...
@@ -39,17 +41,36 @@ Japanese input method SKK engine for IBus
 MPEG2-TS file splitter
 
 - homepage: http://www.rec10.org/
+- AUR: https://aur.archlinux.org/packages.php?ID=52406
+
+## libskk
+Library to deal with Japanese kana-to-kanji conversion method
+
+- homepage: https://github.com/ueno/libskk
+- AUR: https://aur.archlinux.org/packages.php?ID=56087
 
 ## mlterm
 without scim
 
 - original: https://aur.archlinux.org/packages.php?ID=34420
 
+## omake
+A build system designed for scalability and portability
+
+- homepage: http://omake.metaprl.org/index.html
+- AUR: https://aur.archlinux.org/packages.php?ID=16093
+
 ## ruby-addressable
 URI Implementation
 
 - homepage: http://addressable.rubyforge.org/
 - AUR: https://aur.archlinux.org/packages.php?ID=47580
+
+## ruby-bluecloth
+A Ruby implementation of Markdown.
+
+- homepage: http://deveiate.org/projects/BlueCloth
+- AUR: https://aur.archlinux.org/packages.php?ID=37004
 
 ## ruby-bson
 Ruby implementation of BSON
@@ -63,11 +84,23 @@ C extensions for Ruby BSON.
 - homepage: http://www.mongodb.org
 - AUR: https://aur.archlinux.org/packages.php?ID=47927
 
+## ruby-cookiejar
+Client-side HTTP Cookie library
+
+- homepage: https://github.com/dwaite/cookiejar
+- AUR: https://aur.archlinux.org/packages.php?ID=57058
+
 ## ruby-daemons
 A toolkit to create and control daemons in different ways
 
 - homepage: http://daemons.rubyforge.org/
 - AUR: https://aur.archlinux.org/packages.php?ID=34688
+
+## ruby-diff-lcs
+Provides a list of changes that represent the difference between two sequenced collections.
+
+- homepage: http://rubygems.org/gems/diff-lcs
+- AUR: https://aur.archlinux.org/packages.php?ID=34689
 
 ## ruby-em-http-request
 EventMachine based, async HTTP Request client
@@ -75,11 +108,29 @@ EventMachine based, async HTTP Request client
 - homepage: http://github.com/igrigorik/em-http-request
 - AUR: https://aur.archlinux.org/packages.php?ID=47581
 
+## ruby-em-socksify
+EventMachine SOCKSify shim: adds SOCKS support to any protocol
+
+- homepage: http://github.com/igrigorik/em-socksify
+- AUR: https://aur.archlinux.org/packages.php?ID=57056
+
 ## ruby-escape\_utils
 Faster string escaping routines for your web apps
 
 - homepage: http://github.com/brianmario/escape_utils
 - AUR: https://aur.archlinux.org/packages.php?ID=47579
+
+## ruby-eventmachine
+Ruby/EventMachine library
+
+- homepage: http://rubyeventmachine.com
+- AUR: https://aur.archlinux.org/packages.php?ID=34692
+
+## ruby-http_parser.rb
+Simple callback-based HTTP request/response parser
+
+- homepage: http://github.com/tmm1/http_parser.rb
+- AUR: https://aur.archlinux.org/packages.php?ID=57057
 
 ## ruby-mongo
 Ruby driver for the MongoDB
@@ -98,6 +149,30 @@ OAuth Core Ruby implementation
 
 - homepage: http://rubygems.org/gems/oauth
 - AUR: https://aur.archlinux.org/packages.php?ID=34703
+
+## ruby-rspec
+Behaviour-Driven Development tool for Ruby programmers
+
+- homepage: http://github.com/rspec
+- AUR: https://aur.archlinux.org/packages.php?ID=37001
+
+## ruby-rspec-core
+RSpec runner and example groups
+
+- homepage: http://github.com/rspec/rspec-core
+- AUR: https://aur.archlinux.org/packages.php?ID=41782
+
+## ruby-rspec-expectations
+RSpec expectations (should[_not] and matchers)
+
+- homepage: http://github.com/rspec/rspec-expectations
+- AUR: https://aur.archlinux.org/packages.php?ID=41783
+
+## ruby-rspec-mocks
+RSpec's 'test double' framework, with support for stubbing and mocking
+
+- homepage: http://github.com/rspec/rspec-mocks
+- AUR: https://aur.archlinux.org/packages.php?ID=41784
 
 ## ruby-thin
 A thin and fast web server
