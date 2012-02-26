@@ -1,12 +1,12 @@
 # Maintainer: eagletmt <eagletmt@gmail.com>
-pkgname=ruby-oauth
-_realname=oauth
-pkgver=0.4.5
+pkgname=ruby-eventmachine
+_realname=eventmachine
+pkgver=0.12.10
 pkgrel=1
-pkgdesc='OAuth Core Ruby implementation'
-arch=("any")
-url='http://rubygems.org/gems/oauth'
-license=('MIT')
+pkgdesc="Ruby/EventMachine library"
+arch=("i686" "x86_64")
+url='http://rubyeventmachine.com'
+license=("GPL")
 depends=("ruby")
 makedepends=('rubygems')
 source=(http://rubygems.org/downloads/$_realname-$pkgver.gem)
@@ -14,9 +14,9 @@ noextract=($_realname-$pkgver.gem)
 
 build() {
   cd "$srcdir"
-  local _gemdir="$(ruby -rubygems -e 'puts Gem.default_dir')"
+  local _gemdir="$(ruby -rubygems -e'puts Gem.default_dir')"
   gem install --no-user-install --ignore-dependencies -i "$pkgdir$_gemdir" $_realname-$pkgver.gem
 }
 
 # vim:set ts=2 sw=2 et:
-md5sums=('a5667d93bb555884e8c9925d4a97acd7')
+md5sums=('1379ea93ad77132fb3756b492025f172')
