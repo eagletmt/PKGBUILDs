@@ -119,6 +119,12 @@ EventMachine SOCKSify shim: adds SOCKS support to any protocol
 - homepage: http://github.com/igrigorik/em-socksify
 - AUR: https://aur.archlinux.org/packages.php?ID=57056
 
+## ruby-em-synchrony
+Fiber aware EventMachine libraries
+
+- homepage: http://github.com/igrigorik/em-synchrony
+- AUR: https://aur.archlinux.org/packages.php?ID=57096
+
 ## ruby-escape\_utils
 Faster string escaping routines for your web apps
 
