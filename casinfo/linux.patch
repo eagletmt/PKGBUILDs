@@ -1,0 +1,67 @@
+diff -ur src.orig/b_cas_card.c src/b_cas_card.c
+--- src.orig/b_cas_card.c	2012-02-25 01:20:41.490740500 +0900
++++ src/b_cas_card.c	2012-05-20 04:14:29.016133026 +0900
+@@ -6,7 +6,11 @@
+ 
+ #include <math.h>
+ 
++#ifdef __unix__
++#include <pcsclite.h>
++#else
+ #include <windows.h>
++#endif
+ #include <winscard.h>
+ 
+ #include "arib_util.h"
+diff -ur src.orig/casinfo.c src/casinfo.c
+--- src.orig/casinfo.c	2012-05-19 11:37:36.619146400 +0900
++++ src/casinfo.c	2012-05-20 01:10:16.635563383 +0900
+@@ -105,7 +105,11 @@
+ 		}
+ 	}
+ 
++#ifdef __GNUC__
++	fprintf(stdout, "bcas_card_id: %" PRId64 "\n", stat->bcas_card_id);
++#else
+ 	fprintf(stdout, "bcas_card_id: %I64d\n", stat->bcas_card_id);
++#endif
+ 	fprintf(stdout, "card_status: %04x\n", stat->card_status);
+ 	fprintf(stdout, "ca_system_id: %04x\n", stat->ca_system_id);
+ }
+@@ -118,7 +122,11 @@
+ 		fprintf(stdout, "card_id[%d] = {\n", i);
+ 		fprintf(stdout, "  type: %c%03d\n", id->data[i].maker_id, id->data[i].version);
+ 		fprintf(stdout, "  card_type: %d\n", id->data[i].card_type);
++#ifdef __GNUC__
++		fprintf(stdout, "  card_id: %" PRId64 "\n", id->data[i].card_id);
++#else
+ 		fprintf(stdout, "  card_id: %I64d\n", id->data[i].card_id);
++#endif
+ 		fprintf(stdout, "  check_code: %d\n", id->data[i].check_code);
+ 		fprintf(stdout, "}\n");
+ 	}
+@@ -161,10 +169,10 @@
+ 	period = get_contract_period(bcas, bsi);
+ 	if (period >= 51604) {
+ 		extract_mjd(&yy, &mm, &dd, period);
+-		fprintf(stdout, "%24s : %s : %d : %4d/%02d/%02d\n", bsi->name, tag, bsi->service_id, yy, mm, dd);
++		fprintf(stdout, "%s : %s : %d : %4d/%02d/%02d\n", bsi->name, tag, bsi->service_id, yy, mm, dd);
+ 	} else if (period == 0) {
+ 		extract_mjd(&yy, &mm, &dd, min);
+-		fprintf(stdout, "%24s : %s : %d : %4d/%02d/%02d : uncontracted\n", bsi->name, tag, bsi->service_id, yy, mm, dd);
++		fprintf(stdout, "%s : %s : %d : %4d/%02d/%02d : uncontracted\n", bsi->name, tag, bsi->service_id, yy, mm, dd);
+ 	}
+ }
+ 
+diff -ur src.orig/portable.h src/portable.h
+--- src.orig/portable.h	2007-11-09 00:58:40.886917600 +0900
++++ src/portable.h	2012-05-20 00:59:16.111297580 +0900
+@@ -1,7 +1,7 @@
+ #ifndef PORTABLE_H
+ #define PORTABLE_H
+ 
+-#if (MSC_VER < 1300) 
++#if defined(MSC_VER) && MSC_VER < 1300
+ 
+ typedef unsigned char     uint8_t;
+ typedef   signed char      int8_t;

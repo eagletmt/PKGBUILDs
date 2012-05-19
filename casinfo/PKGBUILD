@@ -1,0 +1,36 @@
+# Maintainer: eagletmt <eagletmt@gmail.com>
+pkgname=casinfo
+pkgver=0.1.5
+pkgrel=1
+pkgdesc="B-CAS card information dumper"
+arch=(i686 x86_64)
+url="http://www.marumo.ne.jp/"
+license=('')
+depends=('pcsclite')
+makedepends=('pkg-config')
+source=(http://www.marumo.ne.jp/junk/$pkgname-$pkgver.lzh
+        linux.patch
+        Makefile)
+noextract=($pkgname-$pkgver.lzh)
+
+build() {
+  cd "$srcdir"
+  local _dir=$pkgname-$pkgver
+  mkdir -p $_dir
+  bsdtar xf $pkgname-$pkgver.lzh -C $_dir
+  cd "$_dir/src"
+  patch -Np1 -i "$srcdir/linux.patch"
+  mv broadcast_service.h broadcast_service.h.cp932
+  iconv -f CP932 -t UTF-8 broadcast_service.h.cp932 > broadcast_service.h
+  make -f "$srcdir/Makefile"
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver/src"
+  install -D -m755 $pkgname "$pkgdir/usr/bin/$pkgname"
+}
+
+# vim:set ts=2 sw=2 et:
+md5sums=('183ce89f27adbc304f5add5ee062f118'
+         '94729726eddd19c35b188f5f9c60fa38'
+         '8140dc987761de5f16369da6a0170f40')
