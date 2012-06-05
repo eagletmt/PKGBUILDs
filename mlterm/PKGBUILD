@@ -4,8 +4,8 @@
 # Contributor: Gatekeeper <cool_work@yahoo.com>
 
 pkgname=mlterm
-pkgver=3.1.1
-pkgrel=1
+pkgver=3.1.2
+pkgrel=2
 pkgdesc="Multi Lingual TERMinal emulator on X"
 url="http://mlterm.sourceforge.net/"
 arch=('i686' 'x86_64')
@@ -51,5 +51,5 @@ package() {
   rsvg-convert -w 48 -h 38 -f png -o mlclient.png mlclient.svg
 }
 
-md5sums=('a59ff4b32c4985fd2d1d5c3000cfc7b8'
+md5sums=('cdbd90b285dae9ae7216f07492e505ed'
          'cea39a3e312d0a40a1e839d79bec03ed')
