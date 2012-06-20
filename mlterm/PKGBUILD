@@ -5,7 +5,7 @@
 
 pkgname=mlterm
 pkgver=3.1.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Multi Lingual TERMinal emulator on X"
 url="http://mlterm.sourceforge.net/"
 arch=('i686' 'x86_64')
@@ -52,4 +52,4 @@ package() {
 }
 
 md5sums=('cdbd90b285dae9ae7216f07492e505ed'
-         'cea39a3e312d0a40a1e839d79bec03ed')
+         'd019c571f28c7b765610e219d9e52e35')
