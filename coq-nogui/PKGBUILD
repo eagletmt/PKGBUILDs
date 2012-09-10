@@ -2,7 +2,7 @@
 # Contributor: George Giorgidze <giorgidze@gmail.com>
 
 pkgname=coq-nogui
-pkgver=8.3pl3
+pkgver=8.4
 pkgrel=2
 pkgdesc='Formal proof management system, without CoqIDE'
 arch=('i686' 'x86_64')
@@ -12,7 +12,6 @@ options=('!emptydirs')
 depends=('ocaml')
 makedepends=('camlp5-transitional' 'hevea')
 source=("http://coq.inria.fr/distrib/V$pkgver/files/coq-$pkgver.tar.gz")
-md5sums=('37e9a52110a025128667c03fed75f9c2')
 provides=("coq=$pkgver")
 conflicts=('coq')
 
@@ -20,8 +19,9 @@ build() {
   cd coq-$pkgver
 
   ./configure \
-    -prefix '/usr' \
-    -mandir '/usr/share/man' \
+    -prefix /usr \
+    -mandir /usr/share/man \
+    -configdir /etc/xdg/coq \
     -opt \
     -coqide no \
     -with-doc no
@@ -38,3 +38,5 @@ package() {
 
   make COQINSTALLPREFIX="$pkgdir" install-doc-html
 }
+
+md5sums=('f28662cd687f66ed3c372ca3d35ea928')
