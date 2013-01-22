@@ -1,7 +1,7 @@
 # Maintainer: eagletmt <eagletmt@gmail.com>
 pkgname=ruby-em-synchrony
 _realname=em-synchrony
-pkgver=1.0.2
+pkgver=1.0.3
 pkgrel=1
 pkgdesc="Fiber aware EventMachine libraries"
 arch=("any")
@@ -19,4 +19,4 @@ build() {
 }
 
 # vim:set ts=2 sw=2 et:
-md5sums=('b8ece3b52b5e4797da79cf1606f0e3da')
+md5sums=('c6a1bbc3e4c5bb426847481f52fd0294')
