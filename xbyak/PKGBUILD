@@ -1,23 +1,24 @@
 # Maintainer: eagletmt <eagletmt@gmail.com>
 pkgname=xbyak
-pkgver=3.71
+pkgver=3.76
+_commit=d66605100d614c3fa7a96e25dc93179da6a93792
 pkgrel=1
 pkgdesc='x86, x64 JIT assembler'
 arch=('any')
 url='http://homepage1.nifty.com/herumi/soft/xbyak_e.html'
 depends=()
 license=('BSD')
-source=("https://github.com/herumi/xbyak/archive/v$pkgver.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::https://github.com/herumi/xbyak/archive/$_commit.tar.gz")
 
 build() {
   :
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$pkgname-$_commit"
   make PREFIX="$pkgdir/usr" install
   install -Dm644 COPYRIGHT "$pkgdir/usr/share/licenses/$pkgname/COPYRIGHT"
 }
 
 # vim:set ts=2 sw=2 et:
-md5sums=('cd4e3163f6537c45a6c4f823152c09a8')
+md5sums=('82401d1be57c3f157102e457a429d3a6')
