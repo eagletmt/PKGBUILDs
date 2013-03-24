@@ -3,7 +3,7 @@
 pkgname=ruby-rspec
 _realname=rspec
 pkgver=2.13.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Behaviour-Driven Development tool for Ruby programmers'
 arch=("any")
 url='https://github.com/rspec'

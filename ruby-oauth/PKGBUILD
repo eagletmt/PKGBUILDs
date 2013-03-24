@@ -2,14 +2,14 @@
 pkgname=ruby-oauth
 _realname=oauth
 pkgver=0.4.7
-pkgrel=1
+pkgrel=2
 pkgdesc='OAuth Core Ruby implementation'
 arch=("any")
-url='http://rubygems.org/gems/oauth'
+url='https://rubygems.org/gems/oauth'
 license=('MIT')
 depends=("ruby")
 makedepends=('rubygems')
-source=(http://rubygems.org/downloads/$_realname-$pkgver.gem)
+source=(https://rubygems.org/downloads/$_realname-$pkgver.gem)
 noextract=($_realname-$pkgver.gem)
 
 build() {

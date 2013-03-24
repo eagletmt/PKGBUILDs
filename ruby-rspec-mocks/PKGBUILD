@@ -3,14 +3,14 @@
 pkgname=ruby-rspec-mocks
 _realname=rspec-mocks
 pkgver=2.13.0
-pkgrel=1
+pkgrel=2
 pkgdesc="RSpec's 'test double' framework, with support for stubbing and mocking"
 arch=("any")
 url='https://github.com/rspec/rspec-mocks'
 license=("MIT")
 depends=("ruby")
 makedepends=('rubygems')
-source=(http://rubygems.org/downloads/$_realname-$pkgver.gem)
+source=(https://rubygems.org/downloads/$_realname-$pkgver.gem)
 noextract=($_realname-$pkgver.gem)
 
 build() {

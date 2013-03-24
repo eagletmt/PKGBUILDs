@@ -2,14 +2,14 @@
 pkgname=ruby-cookiejar
 _realname=cookiejar
 pkgver=0.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Client-side HTTP Cookie library"
 arch=("any")
 url='https://github.com/dwaite/cookiejar'
 license=("GPL")
 depends=("ruby")
 makedepends=('rubygems')
-source=(http://rubygems.org/downloads/$_realname-$pkgver.gem)
+source=(https://rubygems.org/downloads/$_realname-$pkgver.gem)
 noextract=($_realname-$pkgver.gem)
 
 build() {

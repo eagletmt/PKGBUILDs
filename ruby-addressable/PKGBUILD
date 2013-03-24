@@ -2,14 +2,14 @@
 pkgname=ruby-addressable
 _realname=addressable
 pkgver=2.3.3
-pkgrel=1
+pkgrel=2
 pkgdesc='URI Implementation'
 arch=("any")
 url='http://addressable.rubyforge.org/'
 license=('MIT')
 depends=("ruby")
 makedepends=('rubygems')
-source=(http://rubygems.org/downloads/$_realname-$pkgver.gem)
+source=(https://rubygems.org/downloads/$_realname-$pkgver.gem)
 noextract=($_realname-$pkgver.gem)
 
 build() {

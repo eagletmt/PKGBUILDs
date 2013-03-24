@@ -2,14 +2,14 @@
 pkgname=ruby-em-http-request
 _realname=em-http-request
 pkgver=1.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="EventMachine based, async HTTP Request client"
 arch=("any")
-url='http://github.com/igrigorik/em-http-request'
+url='https://github.com/igrigorik/em-http-request'
 license=("MIT")
 depends=("ruby" "ruby-eventmachine>=1.0.0beta.4" "ruby-addressable>=2.2.3" "ruby-http_parser.rb>=0.5.3" "ruby-em-socksify" "ruby-cookiejar")
 makedepends=('rubygems')
-source=(http://rubygems.org/downloads/$_realname-$pkgver.gem)
+source=(https://rubygems.org/downloads/$_realname-$pkgver.gem)
 noextract=($_realname-$pkgver.gem)
 
 build() {

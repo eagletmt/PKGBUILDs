@@ -1,7 +1,7 @@
 # Maintainer: eagletmt <eagletmt@gmail.com>
 pkgname=ruby-nokogiri
 _realname=nokogiri
-pkgver=1.5.8
+pkgver=1.5.9
 pkgrel=1
 pkgdesc="HTML, XML, SAX, and Reader parser"
 arch=("i686" "x86_64" "armv7h")
@@ -9,7 +9,7 @@ url='http://nokogiri.org'
 license=("MIT")
 depends=("ruby" "libxslt")
 makedepends=('rubygems')
-source=(http://rubygems.org/downloads/$_realname-$pkgver.gem)
+source=(https://rubygems.org/downloads/$_realname-$pkgver.gem)
 noextract=($_realname-$pkgver.gem)
 
 build() {

@@ -2,10 +2,10 @@
 pkgname=ruby-escape_utils
 _realname=escape_utils
 pkgver=0.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Faster string escaping routines for your web apps'
 arch=("i686" "x86_64")
-url='http://github.com/brianmario/escape_utils'
+url='https://github.com/brianmario/escape_utils'
 license=('MIT')
 depends=("ruby")
 makedepends=('rubygems')

@@ -2,14 +2,14 @@
 pkgname=ruby-em-synchrony
 _realname=em-synchrony
 pkgver=1.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Fiber aware EventMachine libraries"
 arch=("any")
-url='http://github.com/igrigorik/em-synchrony'
+url='https://github.com/igrigorik/em-synchrony'
 license=("MIT")
 depends=("ruby" "ruby-eventmachine>=1.0.0beta.1")
 makedepends=('rubygems')
-source=(http://rubygems.org/downloads/$_realname-$pkgver.gem)
+source=(https://rubygems.org/downloads/$_realname-$pkgver.gem)
 noextract=($_realname-$pkgver.gem)
 
 build() {

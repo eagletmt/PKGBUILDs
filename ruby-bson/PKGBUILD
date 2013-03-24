@@ -2,7 +2,7 @@
 pkgname=ruby-bson
 _realname=bson
 pkgver=1.8.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Ruby implementation of BSON"
 arch=("any")
 url='http://www.mongodb.org'

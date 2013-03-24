@@ -2,14 +2,14 @@
 pkgname=ruby-em-socksify
 _realname=em-socksify
 pkgver=0.2.1
-pkgrel=1
+pkgrel=2
 pkgdesc="EventMachine SOCKSify shim: adds SOCKS support to any protocol"
 arch=("any")
-url='http://github.com/igrigorik/em-socksify'
+url='https://github.com/igrigorik/em-socksify'
 license=("MIT")
 depends=("ruby" "ruby-eventmachine>=1.0.0beta.4")
 makedepends=('rubygems')
-source=(http://rubygems.org/downloads/$_realname-$pkgver.gem)
+source=(https://rubygems.org/downloads/$_realname-$pkgver.gem)
 noextract=($_realname-$pkgver.gem)
 
 build() {

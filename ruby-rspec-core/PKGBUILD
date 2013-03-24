@@ -3,7 +3,7 @@
 pkgname=ruby-rspec-core
 _realname=rspec-core
 pkgver=2.13.0
-pkgrel=1
+pkgrel=2
 pkgdesc='RSpec runner and example groups'
 arch=("any")
 url='https://github.com/rspec/rspec-core'

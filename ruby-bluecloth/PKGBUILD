@@ -4,14 +4,14 @@
 pkgname=ruby-bluecloth
 _realname=bluecloth
 pkgver=2.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A Ruby implementation of Markdown.'
 arch=("i686" "x86_64")
 url='http://deveiate.org/projects/BlueCloth'
 license=("BSD")
 depends=("ruby")
 makedepends=('rubygems')
-source=(http://rubygems.org/downloads/$_realname-$pkgver.gem)
+source=(https://rubygems.org/downloads/$_realname-$pkgver.gem)
 noextract=($_realname-$pkgver.gem)
 
 build() {

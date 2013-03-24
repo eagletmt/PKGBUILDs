@@ -3,7 +3,7 @@
 pkgname=ruby-rspec-expectations
 _realname=rspec-expectations
 pkgver=2.13.0
-pkgrel=1
+pkgrel=2
 pkgdesc='RSpec expectations (should[_not] and matchers)'
 arch=("any")
 url='https://github.com/rspec/rspec-expectations'
