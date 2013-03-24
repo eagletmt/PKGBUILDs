@@ -19,4 +19,4 @@ build() {
 }
 
 # vim:set ts=2 sw=2 et:
-md5sums=('ef211da73788db65440f9e8181b54074')
+md5sums=('cf4cf8b7de5a410fa1f64d07461d68ed')
