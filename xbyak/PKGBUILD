@@ -1,7 +1,7 @@
 # Maintainer: eagletmt <eagletmt@gmail.com>
 pkgname=xbyak
-pkgver=3.76
-_commit=d66605100d614c3fa7a96e25dc93179da6a93792
+pkgver=3.80
+_commit=6f8d5054aa02dd7eab22220435c41b77337d610f
 pkgrel=1
 pkgdesc='x86, x64 JIT assembler'
 arch=('any')
@@ -21,4 +21,4 @@ package() {
 }
 
 # vim:set ts=2 sw=2 et:
-md5sums=('82401d1be57c3f157102e457a429d3a6')
+md5sums=('ff61afd1893d7b3f8458ffc812705493')
