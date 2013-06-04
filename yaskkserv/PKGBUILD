@@ -37,5 +37,5 @@ package() {
 
 # vim:set ts=2 sw=2 et:
 md5sums=('7cd86e0827d53214f15dcac8efec3d5f'
-         'b588383351e59e4df09e70b53c053f6d'
+         'b7e58289efc5cb5952c51028303de77b'
          'fcb568744780da96d3cb8df0dd701ee7')
