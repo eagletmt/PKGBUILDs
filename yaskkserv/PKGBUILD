@@ -1,7 +1,7 @@
 # Maintainer: eagletmt <eagletmt@gmail.com>
 pkgname=yaskkserv
 pkgver=0.5.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Yet another SKK Japanese input method dictionary server'
 arch=('x86_64' 'i686')
 url='http://umiushi.org/~wac/yaskkserv/'
@@ -23,6 +23,7 @@ build() {
 package() {
   cd "$srcdir/$pkgname-$pkgver"
   make PREFIX="$pkgdir/usr" install_all
+  mv "$pkgdir/usr/sbin/"* "$pkgdir/usr/bin/"
 
   mkdir -p "$pkgdir/usr/share/skk"
   "$pkgdir/usr/bin/yaskkserv_make_dictionary" /usr/share/skk/SKK-JISYO.L "$pkgdir/usr/share/skk/SKK-JISYO.L.yaskkserv"
@@ -38,4 +39,4 @@ package() {
 # vim:set ts=2 sw=2 et:
 md5sums=('7cd86e0827d53214f15dcac8efec3d5f'
          'b7e58289efc5cb5952c51028303de77b'
-         'fcb568744780da96d3cb8df0dd701ee7')
+         '2891b69c4f0c80525c1b01358d3cbd5b')
