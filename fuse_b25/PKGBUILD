@@ -6,7 +6,7 @@ pkgdesc='FUSE filesystem to descramble streams from ISDB-T/S DVB devices'
 arch=('i686' 'x86_64')
 url='http://2sen.dip.jp/cgi-bin/dtvup/upload.cgi'
 license=('GPL')
-depends=('fuse' 'pcsclite' 'ccid13')
+depends=('fuse' 'pcsclite' 'ccid>=1.4.8')
 source=(http://www3.wazoku.net/2sen/dtvup/source/up0664.zip)
 
 build() {

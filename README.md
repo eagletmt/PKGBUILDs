@@ -3,11 +3,6 @@ My PKGBUILDs for Arch Linux.
 
 ## Not available on AUR
 
-### ccid13
-ccid 1.4 doesn't recognize B-CAS card...
-
-- homepage: http://pcsclite.alioth.debian.org/ccid.html
-
 ### coq-nogui
 Formal proof management system, without CoqIDE
 
