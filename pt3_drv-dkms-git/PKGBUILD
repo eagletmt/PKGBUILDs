@@ -1,8 +1,7 @@
 # Maintainer: Kohei Suzuki <eagletmt@gmail.com>
 pkgname=pt3_drv-dkms-git
 _pkgname=pt3_drv
-pkgver=0.0.1.3e315b5
-_pkgver=0.0.1
+pkgver=r101.3e315b5
 pkgrel=1
 pkgdesc="PT3 driver sources for DKMS"
 arch=('i686' 'x86_64')
@@ -18,7 +17,7 @@ source=("$pkgname"::'git+https://github.com/m-tsudo/pt3'
 
 pkgver() {
   cd "$srcdir/$pkgname"
-  printf "%s.%s" $_pkgver "$(git rev-parse --short HEAD)"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 prepare() {
