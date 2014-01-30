@@ -1,7 +1,7 @@
 # Maintainer: Kohei Suzuki <eagletmt@gmail.com>
 pkgname=pt3_drv-dkms-git
 _pkgname=pt3_drv
-pkgver=0.0.1.8f47d0b
+pkgver=0.0.1.3e315b5
 _pkgver=0.0.1
 pkgrel=1
 pkgdesc="PT3 driver sources for DKMS"
@@ -10,7 +10,7 @@ url="https://github.com/m-tsudo/pt3"
 license=('GPL')
 depends=('dkms' 'linux-headers')
 makedepends=('git')
-provides=('pt3-dkms')
+provides=('pt3_drv-dkms')
 install=dkms.install
 source=("$pkgname"::'git+https://github.com/m-tsudo/pt3'
         remove-make-dkms.patch
