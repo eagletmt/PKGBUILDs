@@ -4,32 +4,32 @@
 # Contributor: Grigorios Bouzakis <grbzks[at]gmail[dot]com>
 
 pkgname=tmux-cjkwidth
-pkgver=1.9
+pkgver=1.9_a
 pkgrel=1
 pkgdesc='A terminal multiplexer'
 url='http://tmux.sourceforge.net/'
 arch=('i686' 'x86_64')
 license=('BSD')
 depends=('ncurses' 'libevent')
-source=(http://downloads.sourceforge.net/tmux/tmux-$pkgver.tar.gz
+source=(http://downloads.sourceforge.net/tmux/tmux-${pkgver/_/}.tar.gz
         LICENSE
-        cjkwidth.patch)
+        wcwidth.patch)
 conflicts=('tmux')
 provides=("tmux=$pkgver-$pkgrel")
 
 prepare() {
-  cd "$srcdir/tmux-$pkgver"
-  patch -Np0 -i "$srcdir/cjkwidth.patch"
+  cd "$srcdir/tmux-${pkgver/_/}"
+  patch -Np1 -i "$srcdir/wcwidth.patch"
 }
 
 build() {
-  cd "$srcdir/tmux-$pkgver"
+  cd "$srcdir/tmux-${pkgver/_/}"
   ./configure --prefix=/usr
   make
 }
 
 package() {
-  cd "$srcdir/tmux-$pkgver"
+  cd "$srcdir/tmux-${pkgver/_/}"
   make install DESTDIR=$pkgdir
   install -Dm644 ../LICENSE "$pkgdir/usr/share/licenses/tmux/LICENSE"
 
@@ -41,6 +41,6 @@ package() {
   mv $pkgdir/usr/share/tmux/bash_completion_tmux.sh $pkgdir/usr/share/bash-completion/completions/tmux
 }
 
-md5sums=('5f5ed0f03a666279264da45b60075600'
-         '71601bc37fa44e4395580b321963018e'
-         '5618aa6847d04eab0ae31189b89e1dd5')
+sha1sums=('815264268e63c6c85fe8784e06a840883fcfc6a2'
+          '85c4a73c14caa54b11777d97964ac7bc2a8101f5'
+          '199c204bb8c7284457986145bbf8192f87cd8c54')
