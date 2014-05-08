@@ -1,0 +1,25 @@
+# Maintainer: Kohei Suzuki <eagletmt@gmail.com>
+pkgname=mackerel-agent
+pkgver=0.5.0_1
+pkgrel=1
+pkgdesc="A revolutionary new kind of application performance management"
+arch=('i686' 'x86_64')
+url="https://mackerel.io/"
+license=('unknown')
+depends=()
+backup=('etc/mackerel-agent/mackerel-agent.conf')
+source=(https://mackerel.io/assets/files/agents/$pkgname-${pkgver/_/-}.tar.gz
+        mackerel-agent.conf
+        mackerel-agent.service)
+
+package() {
+  install -Dm755 "$srcdir/$pkgname/mackerel-agent" "$pkgdir/usr/bin/mackerel-agent"
+  install -Dm644 "$srcdir/mackerel-agent.conf" "$pkgdir/etc/mackerel-agent/mackerel-agent.conf"
+  install -Dm644 "$srcdir/mackerel-agent.service" "$pkgdir/usr/lib/systemd/system/mackerel-agent.service"
+
+  mkdir -p "$pkgdir/var/lib/mackerel-agent"
+}
+
+sha1sums=('8a1e212d7f94ca67da4c901572337309edf42b51'
+          '16fd84221d4b72120b881a13b70d7b8ce79f3817'
+          'd8f186e189acc057c7db8f16e85ad861a622d2fe')
