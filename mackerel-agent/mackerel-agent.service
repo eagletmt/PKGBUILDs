@@ -1,5 +1,6 @@
 [Unit]
 Description=A revolutionary new kind of application performance management
+After=network.target
 
 [Service]
 ExecStart=/usr/bin/mackerel-agent
