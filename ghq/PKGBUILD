@@ -6,17 +6,17 @@ pkgdesc="Manage remote repository clones"
 arch=('i686' 'x86_64')
 url="https://github.com/motemen/ghq"
 license=('MIT')
-makedepends=('go')
+makedepends=('go' 'git')
 source=("ghq-${pkgver}.tar.gz::https://github.com/motemen/ghq/archive/v${pkgver}.tar.gz")
 
 build() {
   cd "$pkgname-$pkgver"
-  make
+  GOPATH="$srcdir/build" make
 }
 
 check() {
   cd "$pkgname-$pkgver"
-  make test
+  GOPATH="$srcdir/build" make test
 }
 
 package() {
