@@ -4,13 +4,13 @@
 # Contributor: Grigorios Bouzakis <grbzks[at]gmail[dot]com>
 
 pkgname=tmux-cjkwidth
-pkgver=1.9_a
+pkgver=2.0
 pkgrel=1
 pkgdesc='A terminal multiplexer'
 url='http://tmux.sourceforge.net/'
 arch=('i686' 'x86_64')
 license=('BSD')
-depends=('ncurses' 'libevent')
+depends=('ncurses' 'libevent' 'libutempter')
 source=(http://downloads.sourceforge.net/tmux/tmux-${pkgver/_/}.tar.gz
         LICENSE
         wcwidth.patch)
@@ -41,6 +41,6 @@ package() {
   mv $pkgdir/usr/share/tmux/bash_completion_tmux.sh $pkgdir/usr/share/bash-completion/completions/tmux
 }
 
-sha1sums=('815264268e63c6c85fe8784e06a840883fcfc6a2'
+sha1sums=('977871e7433fe054928d86477382bd5f6794dc3d'
           '85c4a73c14caa54b11777d97964ac7bc2a8101f5'
-          '199c204bb8c7284457986145bbf8192f87cd8c54')
+          'df4f48beff86bdbce39d862c34f22999208fe42e')

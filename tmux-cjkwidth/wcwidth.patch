@@ -1,42 +1,42 @@
-diff -ur tmux-1.9a.orig/server.c tmux-1.9a/server.c
---- tmux-1.9a.orig/server.c	2014-02-23 05:48:37.000000000 +0900
-+++ tmux-1.9a/server.c	2014-03-08 23:13:50.115997044 +0900
-@@ -149,7 +149,6 @@
- 	ARRAY_INIT(&global_buffers);
+diff -ur tmux-2.0.orig/server.c tmux-2.0/server.c
+--- tmux-2.0.orig/server.c	2015-05-06 05:21:51.000000000 +0900
++++ tmux-2.0/server.c	2015-05-17 22:54:02.752976872 +0900
+@@ -147,7 +147,6 @@
+ 	TAILQ_INIT(&session_groups);
  	mode_key_init_trees();
  	key_bindings_init();
 -	utf8_build();
  
  	start_time = time(NULL);
  	log_debug("socket path %s", socket_path);
-diff -ur tmux-1.9a.orig/tmux.c tmux-1.9a/tmux.c
---- tmux-1.9a.orig/tmux.c	2014-02-23 05:48:37.000000000 +0900
-+++ tmux-1.9a/tmux.c	2014-03-08 23:19:50.031585097 +0900
+diff -ur tmux-2.0.orig/tmux.c tmux-2.0/tmux.c
+--- tmux-2.0.orig/tmux.c	2015-05-04 00:43:34.000000000 +0900
++++ tmux-2.0/tmux.c	2015-05-17 22:54:02.752976872 +0900
 @@ -216,6 +216,7 @@
  #endif
  
  	setlocale(LC_TIME, "");
 +	setlocale(LC_CTYPE, "");
  
- 	quiet = flags = 0;
+ 	flags = 0;
  	label = path = NULL;
-diff -ur tmux-1.9a.orig/tmux.h tmux-1.9a/tmux.h
---- tmux-1.9a.orig/tmux.h	2014-02-23 05:48:37.000000000 +0900
-+++ tmux-1.9a/tmux.h	2014-03-08 23:13:58.606050537 +0900
-@@ -2312,7 +2312,6 @@
+diff -ur tmux-2.0.orig/tmux.h tmux-2.0/tmux.h
+--- tmux-2.0.orig/tmux.h	2015-05-06 05:21:51.000000000 +0900
++++ tmux-2.0/tmux.h	2015-05-17 22:55:17.316799639 +0900
+@@ -2293,7 +2293,6 @@
  void		 session_renumber_windows(struct session *);
  
  /* utf8.c */
--void	utf8_build(void);
- int	utf8_open(struct utf8_data *, u_char);
- int	utf8_append(struct utf8_data *, u_char);
- u_int	utf8_combine(const struct utf8_data *);
-diff -ur tmux-1.9a.orig/utf8.c tmux-1.9a/utf8.c
---- tmux-1.9a.orig/utf8.c	2014-02-23 05:48:37.000000000 +0900
-+++ tmux-1.9a/utf8.c	2014-03-08 23:18:04.110924255 +0900
-@@ -19,184 +19,10 @@
- #include <sys/types.h>
+-void		 utf8_build(void);
+ void		 utf8_set(struct utf8_data *, u_char);
+ int		 utf8_open(struct utf8_data *, u_char);
+ int		 utf8_append(struct utf8_data *, u_char);
+diff -ur tmux-2.0.orig/utf8.c tmux-2.0/utf8.c
+--- tmux-2.0.orig/utf8.c	2015-05-06 05:21:51.000000000 +0900
++++ tmux-2.0/utf8.c	2015-05-17 22:54:30.266490778 +0900
+@@ -20,184 +20,10 @@
  
+ #include <stdlib.h>
  #include <string.h>
 +#include <wchar.h>
  
@@ -220,14 +220,13 @@ diff -ur tmux-1.9a.orig/utf8.c tmux-1.9a/utf8.c
  u_int	utf8_combine(const struct utf8_data *);
  u_int	utf8_width(const struct utf8_data *);
  
-@@ -246,49 +72,6 @@
+@@ -257,48 +83,6 @@
  	return (0);
  }
  
 -/* Check if two width tree entries overlap. */
 -int
--utf8_overlap(
--    struct utf8_width_entry *item1, struct utf8_width_entry *item2)
+-utf8_overlap(struct utf8_width_entry *item1, struct utf8_width_entry *item2)
 -{
 -	if (item1->first >= item2->first && item1->first <= item2->last)
 -		return (1);
@@ -270,16 +269,7 @@ diff -ur tmux-1.9a.orig/utf8.c tmux-1.9a/utf8.c
  /* Combine UTF-8 into 32-bit Unicode. */
  u_int
  utf8_combine(const struct utf8_data *utf8data)
-@@ -313,7 +96,7 @@
- 		value = utf8data->data[3] & 0x3f;
- 		value |= (utf8data->data[2] & 0x3f) << 6;
- 		value |= (utf8data->data[1] & 0x3f) << 12;
--		value |= (utf8data->data[0] & 0x3f) << 18;
-+		value |= (utf8data->data[0] & 0x03) << 18;
- 		break;
- 	}
- 	return (value);
-@@ -332,23 +115,13 @@
+@@ -342,25 +126,15 @@
  	return (1);
  }
  
@@ -306,3 +296,5 @@ diff -ur tmux-1.9a.orig/utf8.c tmux-1.9a/utf8.c
 -	return (1);
 +	return (width <= -1 ? 1 : width);
  }
+ 
+ /*
