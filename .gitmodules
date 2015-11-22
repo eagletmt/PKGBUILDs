@@ -1,3 +1,6 @@
 [submodule "ghq"]
 	path = ghq
 	url = aur@aur.archlinux.org:ghq
+[submodule "yaskkserv"]
+	path = yaskkserv
+	url = aur@aur.archlinux.org:yaskkserv
