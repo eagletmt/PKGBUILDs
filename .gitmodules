@@ -4,3 +4,6 @@
 [submodule "yaskkserv"]
 	path = yaskkserv
 	url = aur@aur.archlinux.org:yaskkserv
+[submodule "pt3_drv-dkms-git"]
+	path = pt3_drv-dkms-git
+	url = aur@aur.archlinux.org:pt3_drv-dkms-git
