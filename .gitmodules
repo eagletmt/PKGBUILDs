@@ -1,0 +1,3 @@
+[submodule "ghq"]
+	path = ghq
+	url = aur@aur.archlinux.org:ghq
