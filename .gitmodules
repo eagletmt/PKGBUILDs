@@ -7,3 +7,6 @@
 [submodule "pt3_drv-dkms-git"]
 	path = pt3_drv-dkms-git
 	url = aur@aur.archlinux.org:pt3_drv-dkms-git
+[submodule "pt1_drv-dkms-hg"]
+	path = pt1_drv-dkms-hg
+	url = aur@aur.archlinux.org:pt1_drv-dkms-hg
